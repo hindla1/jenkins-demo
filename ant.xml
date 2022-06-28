@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="war demo" default="deploy">
+  <target name="build">
+       <war warfile="target/buildDemo.war" needxmlfile='false'>
+           <fileset dir="buildDemo"> 
+           </fileset> 
+       </war>
+   </target>
+
+  <target name="deploy" depends="build">
+     <copy todir="/home/ec2-user/tomcat8/webapps/">
+         <fileset dir="target"/>
+     </copy>
+   
+  </target>
+
+</project>
